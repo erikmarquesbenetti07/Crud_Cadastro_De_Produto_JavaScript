@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estoque.css">
+    <title>Estoque</title>
+    <script src="js/funcoes.js"></script>
+</head>
+<body onload="listarEstoque()">
+    <div class="button-container">
+        <button id="btnLimparEstoque" onclick="limparEstoque()">Limpar Estoque</button>
+    </div>
+    
+    <input type="button" value="Cadastrar Produto" class="alinhaBtns" onclick="window.open('index.html','_self')">
+
+    <!-- Tabela de Estoque -->
+            <tbody id="tabelaEstoque">
+                <!-- Os produtos serão listados aqui -->
+            </tbody>
+</body>
+</html>

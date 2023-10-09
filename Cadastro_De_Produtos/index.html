@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/funcoes.js"></script>
+    <title>Cadastro de Produtos</title>
+</head>
+<body onload="carregarTotalEstoque('totalEstoque')">
+    <h1>Cadastro de Produtos</h1>
+    
+    <!-- Formulário de Cadastro de Produtos -->
+    <form>
+        <label for="txtNomeProduto">Nome do Produto:</label>
+        <input type="text" id="txtNomeProduto" required><br><br>
+
+        <label for="quantidadeDesejada">Quantidade Desejada:</label>
+        <input type="number" id="quantidadeDesejada" required><br><br>
+        
+        <label for="txtValorProduto">Valor do Produto (R$):</label>
+        <input type="number" id="txtValorProduto" step="0.01" required><br><br>
+
+        <label for="dataFabricacao">Data de Fabricação:</label>
+        <input type="date" id="dataFabricacao" required><br><br>
+        
+        <label for="dataValidade">Data de Validade:</label>
+        <input type="date" id="dataValidade" required><br><br>
+
+        <label for="txtDescricaoProduto">Descrição do Produto:</label>
+        <textarea id="txtDescricaoProduto" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Novos campos adicionados -->
+
+        <label for="txtCodProduto" style="display: none;">Código do Produto:</label>
+        <input type="text" id="txtCodProduto" readonly style="display: none;"><br><br>
+        
+        <input type="button" value="Cadastrar Produto" onclick="cadastrarProduto(
+            document.getElementById('txtNomeProduto').value,
+            document.getElementById('txtCodProduto').value,
+            parseInt(document.getElementById('quantidadeDesejada').value),
+            parseFloat(document.getElementById('txtValorProduto').value),
+            document.getElementById('dataFabricacao').value,
+            document.getElementById('dataValidade').value,
+            document.getElementById('txtDescricaoProduto').value
+        )">
+        
+
+        <input type="button" value="Ver estoque" class="alinhaBtns" onclick="window.open('verEstoque.html','_self')">
+        <input type="reset" value="Limpar" class="alinhaBtns">
+    </form>
+
+    <br>
+    <p>Total de Produtos em Estoque: <span id="totalEstoque">0</span></p>
+</body>
+</html>
